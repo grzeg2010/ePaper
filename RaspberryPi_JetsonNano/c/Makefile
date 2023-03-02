@@ -9,6 +9,9 @@ EPD = NULL
 ifeq ($(EPD), epd1in64g)
 	OBJ_C_EPD = ${DIR_EPD}/EPD_1in64g.c
 	OBJ_C_Examples = ${DIR_Examples}/EPD_1in64g_test.c
+else ifeq($(EPD), tabletest)
+	OBJ_C_EPD = ${DIR_EPD}/EPD_4in01f.c
+	OBJ_C_Examples = ${DIR_Examples}/Table_test.c
 else ifeq ($(EPD), epd2in36g)
 	OBJ_C_EPD = ${DIR_EPD}/EPD_2in36g.c
 	OBJ_C_Examples = ${DIR_Examples}/EPD_2in36g_test.c

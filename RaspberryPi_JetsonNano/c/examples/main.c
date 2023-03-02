@@ -18,6 +18,9 @@ int main(void)
     
 #ifdef epd1in64g
     EPD_1in64g_test();
+
+#elif tabletest
+    Table_test();
     
 #elif epd2in36g
     EPD_2in36g_test();

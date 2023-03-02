@@ -37,6 +37,8 @@
 #include "Debug.h"
 #include <stdlib.h> // malloc() free()
 
+int Table_test(void);
+
 int EPD_1in64g_test(void);
 int EPD_2in36g_test(void);
 int EPD_3in0g_test(void);
