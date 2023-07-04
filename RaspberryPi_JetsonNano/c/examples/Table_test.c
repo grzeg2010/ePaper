@@ -57,7 +57,7 @@ int Table_test(void)
     Paint_NewImage(BlackImage, EPD_4IN01F_WIDTH, EPD_4IN01F_HEIGHT, 0, EPD_4IN01F_WHITE);
     Paint_SetScale(7);
 
-#if 1
+#if 0
     Paint_Clear(EPD_4IN01F_WHITE);
     printf("Drawing:BlackImage\r\n");
     Paint_DrawRectangle(10, 10, 330, 320, EPD_4IN01F_BLACK, DOT_PIXEL_1X1, DRAW_FILL_FULL);
@@ -65,6 +65,15 @@ int Table_test(void)
     EPD_4IN01F_Display(BlackImage);
     DEV_Delay_ms(10000); 
 #endif
+
+#if 1
+    printf("show image for array\r\n");
+    Paint_Clear(EPD_4IN01F_WHITE);
+    GUI_ReadBmp_RGB_7Color("./pic/cloud.bmp", 0, 0);
+    EPD_4IN01F_Display(BlackImage);
+    DEV_Delay_ms(4000);
+#endif
+
     printf("e-Paper Clear...\r\n");
     EPD_4IN01F_Clear(EPD_4IN01F_WHITE);
     DEV_Delay_ms(1000); 
