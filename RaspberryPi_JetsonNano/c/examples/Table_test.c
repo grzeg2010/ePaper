@@ -74,9 +74,11 @@ int Table_test(void)
     DEV_Delay_ms(4000);
 #endif
 
+#if 0
     printf("e-Paper Clear...\r\n");
     EPD_4IN01F_Clear(EPD_4IN01F_WHITE);
     DEV_Delay_ms(1000); 
+#endif
 	
 	printf("e-Paper Sleep...\r\n");
     EPD_4IN01F_Sleep();
