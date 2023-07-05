@@ -73,6 +73,9 @@ int Table_test(void)
     Paint_DrawRectangle(1, 1, 160, 399, EPD_4IN01F_BLACK, DOT_PIXEL_1X1, DRAW_FILL_FULL);
 
     GUI_ReadBmp_RGB_7Color("./pic/cloud_small.bmp", 20, 20);
+    GUI_ReadBmp_RGB_7Color("./pic/cloud_small.bmp", 180, 20);
+    GUI_ReadBmp_RGB_7Color("./pic/cloud_small.bmp", 340, 20);
+    GUI_ReadBmp_RGB_7Color("./pic/cloud_small.bmp", 500, 20);
     EPD_4IN01F_Display(BlackImage);
     //EPD_4IN01F_Display_part(BlackImage, 0, 0, 640, 200);
     DEV_Delay_ms(4000);
