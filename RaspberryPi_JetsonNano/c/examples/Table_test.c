@@ -67,10 +67,17 @@ int Table_test(void)
 #endif
 
 #if 1
+    Paint_DrawRectangle(0, 0, 160, 400, EPD_4IN01F_BLACK, DOT_PIXEL_1X1, DRAW_FILL_FULL);
+
+    EPD_4IN01F_Display(BlackImage);
+#endif
+
+#if 1
     printf("show image for array\r\n");
     Paint_Clear(EPD_4IN01F_WHITE);
     GUI_ReadBmp_RGB_7Color("./pic/cloud.bmp", 0, 0);
-    EPD_4IN01F_Display(BlackImage);
+    //EPD_4IN01F_Display(BlackImage);
+    EPD_4IN01F_Display_part(BlackImage, 0, 0, 640, 200);
     DEV_Delay_ms(4000);
 #endif
 
