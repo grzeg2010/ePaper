@@ -31,6 +31,13 @@
 #include "EPD_Test.h"
 #include <time.h> 
 
+void PrintData(int x_pos) {
+    GUI_ReadBmp_RGB_7Color("./pic/cloud_small.bmp", x_pos, 20);
+    Paint_DrawString_EN(x_pos + 10, 130, "15C", &Font24, EPD_4IN01F_WHITE, EPD_4IN01F_RED);
+    Paint_DrawString_EN(x_pos + 10, 160, "2 m/s", &Font24, EPD_4IN01F_WHITE, EPD_4IN01F_GREEN);
+    Paint_DrawString_EN(x_pos + 10, 190, "53%", &Font24, EPD_4IN01F_WHITE, EPD_4IN01F_BLUE);
+}
+
 int Table_test(void)
 {
     printf("EPD_4in01F_test Demo\r\n");
@@ -71,18 +78,15 @@ int Table_test(void)
     Paint_Clear(EPD_4IN01F_WHITE);
 
     //Paint_DrawRectangle(1, 1, 160, 399, EPD_4IN01F_BLACK, DOT_PIXEL_1X1, DRAW_FILL_EMPTY);
-    Paint_DrawLine(160, 1, 160, 399, EPD_4IN01F_BLACK, DOT_PIXE_1X1, LINE_STYLE_SOLID);
-    Paint_DrawLine(320, 1, 320, 399, EPD_4IN01F_BLACK, DOT_PIXE_1X1, LINE_STYLE_SOLID);
-    Paint_DrawLine(480, 1, 480, 399, EPD_4IN01F_BLACK, DOT_PIXE_1X1, LINE_STYLE_SOLID);
+    Paint_DrawLine(160, 1, 160, 399, EPD_4IN01F_BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
+    Paint_DrawLine(320, 1, 320, 399, EPD_4IN01F_BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
+    Paint_DrawLine(480, 1, 480, 399, EPD_4IN01F_BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
 
-    GUI_ReadBmp_RGB_7Color("./pic/cloud_small.bmp", 20, 20);
-    Paint_DrawString_EN(20, 130, "15C", &Font24, EPD_4IN01F_WHITE, EPD_4IN01F_RED);
-    Paint_DrawString_EN(20, 160, "2 m/s", &Font24, EPD_4IN01F_WHITE, EPD_4IN01F_GREEN);
-    Paint_DrawString_EN(20, 190, "53%", &Font24, EPD_4IN01F_WHITE, EPD_4IN01F_BLUE);
+    PrintData(20);
+    PrintData(180);
+    PrintData(340);
+    PrintData(500);
 
-    GUI_ReadBmp_RGB_7Color("./pic/cloud_small.bmp", 180, 20);
-    GUI_ReadBmp_RGB_7Color("./pic/cloud_small.bmp", 340, 20);
-    GUI_ReadBmp_RGB_7Color("./pic/cloud_small.bmp", 500, 20);
     EPD_4IN01F_Display(BlackImage);
     //EPD_4IN01F_Display_part(BlackImage, 0, 0, 640, 200);
     DEV_Delay_ms(4000);
