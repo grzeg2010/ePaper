@@ -73,6 +73,8 @@ int Table_test(void)
     Paint_DrawRectangle(1, 1, 160, 399, EPD_4IN01F_BLACK, DOT_PIXEL_1X1, DRAW_FILL_FULL);
 
     GUI_ReadBmp_RGB_7Color("./pic/cloud_small.bmp", 20, 20);
+    Paint_DrawNum(20, 130, 15, &Font12, EPD_4IN01F_BLACK, EPD_4IN01F_WHITE);
+
     GUI_ReadBmp_RGB_7Color("./pic/cloud_small.bmp", 180, 20);
     GUI_ReadBmp_RGB_7Color("./pic/cloud_small.bmp", 340, 20);
     GUI_ReadBmp_RGB_7Color("./pic/cloud_small.bmp", 500, 20);
