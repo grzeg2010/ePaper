@@ -70,7 +70,10 @@ int Table_test(void)
     printf("show image for array\r\n");
     Paint_Clear(EPD_4IN01F_WHITE);
 
-    Paint_DrawRectangle(1, 1, 160, 399, EPD_4IN01F_BLACK, DOT_PIXEL_1X1, DRAW_FILL_EMPTY);
+    //Paint_DrawRectangle(1, 1, 160, 399, EPD_4IN01F_BLACK, DOT_PIXEL_1X1, DRAW_FILL_EMPTY);
+    Paint_DrawLine(160, 1, 160, 399, EPD_4IN01F_BLACK, DOT_PIXE_1X1, LINE_STYLE_SOLID);
+    Paint_DrawLine(320, 1, 320, 399, EPD_4IN01F_BLACK, DOT_PIXE_1X1, LINE_STYLE_SOLID);
+    Paint_DrawLine(480, 1, 480, 399, EPD_4IN01F_BLACK, DOT_PIXE_1X1, LINE_STYLE_SOLID);
 
     GUI_ReadBmp_RGB_7Color("./pic/cloud_small.bmp", 20, 20);
     Paint_DrawString_EN(20, 130, "15C", &Font24, EPD_4IN01F_WHITE, EPD_4IN01F_RED);
