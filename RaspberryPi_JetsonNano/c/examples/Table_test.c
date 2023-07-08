@@ -70,10 +70,12 @@ int Table_test(void)
     printf("show image for array\r\n");
     Paint_Clear(EPD_4IN01F_WHITE);
 
-    Paint_DrawRectangle(1, 1, 160, 399, EPD_4IN01F_BLACK, DOT_PIXEL_1X1, DRAW_FILL_FULL);
+    Paint_DrawRectangle(1, 1, 160, 399, EPD_4IN01F_BLACK, DOT_PIXEL_1X1, DRAW_FILL_EMPTY);
 
     GUI_ReadBmp_RGB_7Color("./pic/cloud_small.bmp", 20, 20);
-    Paint_DrawNum(20, 130, 15, &Font12, EPD_4IN01F_BLACK, EPD_4IN01F_WHITE);
+    Paint_DrawString_EN(20, 130, "15°C", &Font24, EPD_4IN01F_RED, EPD_4IN01F_WHITE);
+    Paint_DrawString_EN(20, 160, "2 m/s", &Font24, EPD_4IN01F_GREEN, EPD_4IN01F_WHITE);
+    Paint_DrawString_EN(20, 190, "53%", &Font24, EPD_4IN01F_BLUE, EPD_4IN01F_WHITE);
 
     GUI_ReadBmp_RGB_7Color("./pic/cloud_small.bmp", 180, 20);
     GUI_ReadBmp_RGB_7Color("./pic/cloud_small.bmp", 340, 20);
