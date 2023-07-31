@@ -74,22 +74,30 @@ int Table_test(void)
 #endif
 
 #if 1
-    printf("show image for array\r\n");
-    Paint_Clear(EPD_4IN01F_WHITE);
+    for(int i = 0; i < 3; i++) {
+	    printf("show image for array\r\n");
+	    Paint_Clear(EPD_4IN01F_WHITE);
 
-    //Paint_DrawRectangle(1, 1, 160, 399, EPD_4IN01F_BLACK, DOT_PIXEL_1X1, DRAW_FILL_EMPTY);
-    Paint_DrawLine(160, 1, 160, 399, EPD_4IN01F_BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
-    Paint_DrawLine(320, 1, 320, 399, EPD_4IN01F_BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
-    Paint_DrawLine(480, 1, 480, 399, EPD_4IN01F_BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
+	    //Paint_DrawRectangle(1, 1, 160, 399, EPD_4IN01F_BLACK, DOT_PIXEL_1X1, DRAW_FILL_EMPTY);
+	    Paint_DrawLine(160, 1, 160, 399, EPD_4IN01F_BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
+	    Paint_DrawLine(320, 1, 320, 399, EPD_4IN01F_BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
+	    Paint_DrawLine(480, 1, 480, 399, EPD_4IN01F_BLACK, DOT_PIXEL_1X1, LINE_STYLE_SOLID);
 
-    PrintData(20);
-    PrintData(180);
-    PrintData(340);
-    PrintData(500);
+	    PrintData(20);
+	    PrintData(180);
+	    PrintData(340);
+	    PrintData(500);
 
-    EPD_4IN01F_Display(BlackImage);
-    //EPD_4IN01F_Display_part(BlackImage, 0, 0, 640, 200);
-    DEV_Delay_ms(4000);
+	    char *i_string = (char*)i;
+	    printf("\nRepeat: ");
+	    printf(i_string);
+
+	    //Paint_DrawString_EN(305, 230, i_string, &Font24, EPD_4IN01F_BLACK, EPD_4IN01F_WHITE);
+
+	    EPD_4IN01F_Display(BlackImage);
+	    //EPD_4IN01F_Display_part(BlackImage, 0, 0, 640, 200);
+	    DEV_Delay_ms(4000);
+    }
 #endif
 
 #if 0
